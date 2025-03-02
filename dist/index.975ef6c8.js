@@ -602,8 +602,12 @@ var _closeAddModalJs = require("./js/modals/closeAddModal.js");
 var _getPostApiJs = require("./js/api/getPostApi.js");
 var _showPostJs = require("./js/operation/showPost.js");
 var _createMarkupJs = require("./js/operation/createMarkup.js");
+var _addPostApiJs = require("./js/api/addPostApi.js");
+var _getPostObjectJs = require("./js/operation/getPostObject.js");
+var _openEditModalJs = require("./js/modals/openEditModal.js");
+var _closeEditModalJs = require("./js/modals/closeEditModal.js");
 
-},{"./js/app.js":"8lRBv","./js/modals/openAddModal.js":"gEGsv","./js/modals/closeAddModal.js":"cGAG8","./js/api/getPostApi.js":"cMVfd","./js/operation/showPost.js":"lMWR6","./js/operation/createMarkup.js":"dSBT4"}],"8lRBv":[function(require,module,exports,__globalThis) {
+},{"./js/app.js":"8lRBv","./js/modals/openAddModal.js":"gEGsv","./js/modals/closeAddModal.js":"cGAG8","./js/api/getPostApi.js":"cMVfd","./js/operation/showPost.js":"lMWR6","./js/operation/createMarkup.js":"dSBT4","./js/api/addPostApi.js":"s69Mg","./js/operation/getPostObject.js":"d5mPd","./js/modals/openEditModal.js":"7V7vH","./js/modals/closeEditModal.js":"1HARO"}],"8lRBv":[function(require,module,exports,__globalThis) {
 var _showPostJs = require("./operation/showPost.js");
 const paginationButton = document.querySelector(".main_pagination-button");
 paginationButton.addEventListener("click", addContent);
@@ -693,6 +697,7 @@ function createMarkup(array) {
                                 <use href="./icons/symbol-defs.svg#icon-heart"></use>
                             </svg>
                         </span>
+                        <span class="main_id-span">id: ${obj.id}</span>
                     </div>
                 </li>`;
         }).join("");
@@ -702,14 +707,93 @@ function createMarkup(array) {
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gEGsv":[function(require,module,exports,__globalThis) {
 const openButton = document.querySelector(".header_add-post");
-const addModal = document.querySelector(".add-modal_backdrop");
+const backdrop = document.querySelector(".add-modal_backdrop");
 openButton.addEventListener("click", openModal);
 function openModal() {
-    addModal.classList.remove("is-hidden");
+    backdrop.classList.remove("is-hidden");
 }
 
 },{}],"cGAG8":[function(require,module,exports,__globalThis) {
+var _getPostObject = require("../operation/getPostObject");
+const closeButton = document.querySelector(".add-modal_close-button");
+const submitButton = document.querySelector(".add-modal_post-button");
+const backdrop = document.querySelector(".add-modal_backdrop");
+const loginInput = document.querySelector(".add-modal_post-text");
+const imgInput = document.querySelector(".add-modal_author-name");
+const textInput = document.querySelector(".add-modal_post-img");
+closeButton.addEventListener("click", closeModal);
+submitButton.addEventListener("click", closeModal);
+function closeModal(event) {
+    event.preventDefault();
+    backdrop.classList.add("is-hidden");
+    (0, _getPostObject.createObject)(loginInput.value, textInput.value, imgInput.value);
+}
 
-},{}]},["9mu7C","8lqZg"], "8lqZg", "parcelRequire94c2")
+},{"../operation/getPostObject":"d5mPd"}],"d5mPd":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createObject", ()=>createObject);
+var _addPostApi = require("../api/addPostApi");
+function createObject(login, text, img) {
+    const date = new Date();
+    const postObject = {
+        authorLogin: `${login}`,
+        authorName: `${login}`,
+        postImeges: `${img}`,
+        publicationDate: date.getTime(),
+        likes: Math.round(Math.random() * 528 + 1),
+        views: Math.round(Math.random() * 528 + 1) * 10,
+        postText: `${text}`
+    };
+    (0, _addPostApi.addPostApi)(postObject);
+}
+
+},{"../api/addPostApi":"s69Mg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"s69Mg":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addPostApi", ()=>addPostApi);
+var _createMarkupJs = require("../operation/createMarkup.js");
+const addPostApi = async (newPost)=>{
+    try {
+        const options = {
+            method: "POST",
+            body: JSON.stringify(newPost),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        };
+        const data = await fetch("https://67bf7fceb2320ee05013e1b7.mockapi.io/blogproject/post", options).then((data)=>{
+            return data.json();
+        });
+        return data;
+    } catch (error) {
+        return error;
+    }
+};
+
+},{"../operation/createMarkup.js":"dSBT4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7V7vH":[function(require,module,exports,__globalThis) {
+const openButton = document.querySelector(".header_edit-post");
+const backdrop = document.querySelector(".edit-modal_backdrop");
+openButton.addEventListener("click", openModal);
+function openModal() {
+    backdrop.classList.remove("is-hidden");
+}
+
+},{}],"1HARO":[function(require,module,exports,__globalThis) {
+var _getPostObject = require("../operation/getPostObject");
+const closeButton = document.querySelector(".edit-modal_close-button");
+const submitButton = document.querySelector(".edit-modal_post-button");
+const backdrop = document.querySelector(".edit-modal_backdrop");
+const loginInput = document.querySelector(".edit-modal_post-text");
+const imgInput = document.querySelector(".edit-modal_author-name");
+const textInput = document.querySelector(".edit-modal_post-img");
+closeButton.addEventListener("click", closeModal);
+submitButton.addEventListener("click", closeModal);
+function closeModal(event) {
+    event.preventDefault();
+    backdrop.classList.add("is-hidden");
+}
+
+},{"../operation/getPostObject":"d5mPd"}]},["9mu7C","8lqZg"], "8lqZg", "parcelRequire94c2")
 
 //# sourceMappingURL=index.975ef6c8.js.map

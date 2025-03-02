@@ -28,6 +28,11 @@
                 </svg>
                 <span class="header-profil_text">Мій профіль</span>
             </div>
+            <button class="header_edit-post" type="button">
+                <svg class="header_edit-icon">
+                    <use href="./icons/symbol-defs.svg#icon-text"></use>
+                </svg>
+            </button>
             <button class="header_add-post">
                 <svg class="header_add-icon">
                     <use href="./icons/symbol-defs.svg#icon-plus"></use>
@@ -38,7 +43,6 @@
     <main class="main">
         <div class="container">
             <ul class="main_list">
-                
             </ul>
             <button class="main_pagination-button" type="button">Показати ще</button>
         </div>
@@ -48,7 +52,35 @@
 
     <div class="add-modal_backdrop is-hidden">
         <div class="add-modal"> 
-            
+            <button class="add-modal_close-button" type="button">
+                <svg class="add-modal_close-icon">
+                    <use href="./icons/symbol-defs.svg#icon-close"></use>
+                </svg>
+            </button>
+            <h2 class="add-modal_title">Створіть свій пост</h2>
+            <form class="add-modal_form" action="">
+                <input placeholder="Введіть текст посту" class="add-modal_post-text" type="text">
+                <input placeholder="Введіть логін автора" class="add-modal_author-name" type="text">
+                <input placeholder="Введіть посилання на зображення" class="add-modal_post-img" type="text">
+                <button class="add-modal_post-button" type="submit">Виставити пост</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="edit-modal_backdrop is-hidden">
+        <div class="edit-modal"> 
+            <button class="edit-modal_close-button" type="button">
+                <svg class="edit-modal_close-icon">
+                    <use href="./icons/symbol-defs.svg#icon-close"></use>
+                </svg>
+            </button>
+            <h2 class="edit-modal_title">Створіть свій пост</h2>
+            <form class="edit-modal_form" action="">
+                <input placeholder="Введіть текст посту" class="edit-modal_post-text" type="text">
+                <input placeholder="Введіть логін автора" class="edit-modal_author-name" type="text">
+                <input placeholder="Введіть посилання на зображення" class="edit-modal_post-img" type="text">
+                <button class="edit-modal_post-button" type="submit">Виставити пост</button>
+            </form>
         </div>
     </div>
 
