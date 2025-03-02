@@ -218,6 +218,19 @@ body {
   height: 20px;
 }
 
+.edit-modal_title {
+  color: #6e38f7;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.edit-modal_form {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
 .header {
   background-color: #6e38f7;
   width: 300px;
@@ -301,6 +314,26 @@ body {
 }
 
 .header_edit-icon {
+  fill: #6e38f7;
+  width: 30px;
+  height: 30px;
+}
+
+.header_delet-post {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  right: 190px;
+}
+
+.header_delet-icon {
   fill: #6e38f7;
   width: 30px;
   height: 30px;
