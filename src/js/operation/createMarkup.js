@@ -18,6 +18,7 @@ export function createMarkup(array) {
                                 <use href="./icons/symbol-defs.svg#icon-heart"></use>
                             </svg>
                         </span>
+                        <span class="main_id-span">id: ${obj.id}</span>
                     </div>
                 </li>`;
         }).join("");

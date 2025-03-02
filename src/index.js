@@ -4,3 +4,7 @@ import "./js/modals/closeAddModal.js";
 import "./js/api/getPostApi.js";
 import "./js/operation/showPost.js";
 import "./js/operation/createMarkup.js";
+import "./js/api/addPostApi.js";
+import "./js/operation/getPostObject.js";
+import "./js/modals/openEditModal.js";
+import "./js/modals/closeEditModal.js";
