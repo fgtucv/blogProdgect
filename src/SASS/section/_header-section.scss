@@ -83,3 +83,23 @@
     height: 30px;
     fill: #6e38f7;
 }
+
+.header_delet-post {
+    background-color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 190px;
+    bottom: 30px;
+    border: none;
+}
+
+.header_delet-icon {
+    width: 30px;
+    height: 30px;
+    fill: #6e38f7;
+}
