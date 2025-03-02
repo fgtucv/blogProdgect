@@ -57,11 +57,178 @@ body {
   background-color: #fff;
   width: 500px;
   height: 500px;
-  position: absolute;
+  padding-top: 60px;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 4px 3px 20px 3px #000;
+}
+
+.add-modal_close-button {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.add-modal_close-icon {
+  fill: #6e38f7;
+  width: 20px;
+  height: 20px;
+}
+
+.add-modal_title {
+  color: #6e38f7;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.add-modal_form {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.add-modal_post-text, .add-modal_author-name {
+  color: #6e38f7;
+  border: 1px solid #6e38f7;
+  border-radius: 30px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 20px;
+  font-size: 12px;
+}
+
+.add-modal_post-img {
+  border: 1px solid #6e38f7;
+  border-radius: 30px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 20px;
+}
+
+.add-modal_post-text::-webkit-input-placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-text::placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-text:-ms-input-placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-text::placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_author-name::-webkit-input-placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_author-name::placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_author-name:-ms-input-placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_author-name::placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-img::-webkit-input-placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-img::placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-img:-ms-input-placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-img::placeholder {
+  color: #6e38f7;
+  font-size: 12px;
+}
+
+.add-modal_post-button {
+  color: #fff;
+  background: #6e38f7;
+  border: none;
+  border-radius: 30px;
+  width: fit-content;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 12px;
+}
+
+.edit-modal_backdrop {
+  z-index: 100;
+  background-color: #0003;
+  transition: opacity .5s cubic-bezier(.17, .67, .83, .67) .25s;
+  position: fixed;
+  inset: 0;
+}
+
+.edit-modal {
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
+  padding-top: 60px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 4px 3px 20px 3px #000;
+}
+
+.edit-modal_close-button {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.edit-modal_close-icon {
+  fill: #6e38f7;
+  width: 20px;
+  height: 20px;
+}
+
+.edit-modal_title {
+  color: #6e38f7;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.edit-modal_form {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
 }
 
 .header {
@@ -127,6 +294,46 @@ body {
 }
 
 .header_add-icon {
+  fill: #6e38f7;
+  width: 30px;
+  height: 30px;
+}
+
+.header_edit-post {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  right: 110px;
+}
+
+.header_edit-icon {
+  fill: #6e38f7;
+  width: 30px;
+  height: 30px;
+}
+
+.header_delet-post {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  right: 190px;
+}
+
+.header_delet-icon {
   fill: #6e38f7;
   width: 30px;
   height: 30px;
@@ -231,5 +438,10 @@ body {
   margin-right: auto;
   padding: 10px 16px;
   display: block;
+}
+
+.main_id-span {
+  color: #fff;
+  margin-top: 10px;
 }
 /*# sourceMappingURL=index.d62907c0.css.map */
